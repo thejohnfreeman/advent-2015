@@ -25,12 +25,9 @@ ribbon1 (Box dims) = 2 * sum (take 2 $ sort dims) + product dims
 ribbon :: [Box] -> Int
 ribbon = sum . map ribbon1
 
-(>>==) :: Functor f => f a -> (a -> b) -> f b
-(>>==) = flip fmap
-
 main :: IO ()
--- main = getContents >>== parse pBoxes "<stdin>" >>== either show (show . paper) >>= putStrLn
-main = getContents >>== parse pBoxes "<stdin>" >>== either show (show . ribbon) >>= putStrLn
+-- main = getContents >>= putStrLn . either show (show . paper) . parse pBoxes "<stdin>"
+main = getContents >>= putStrLn . either show (show . ribbon) . parse pBoxes "<stdin>"
 -- main = print $ paper1 $ Box [1,1,10]
 -- main = print $ paper1 $ Box [2,3,4]
 -- main = print $ ribbon1 $ Box [1,1,10]
