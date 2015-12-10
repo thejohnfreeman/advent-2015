@@ -1,7 +1,7 @@
-import Control.Monad.State
+import Control.Monad.State.Strict
 import Data.Bits
 import Data.Word
-import qualified Data.Map as M
+import qualified Data.Map.Strict as M
 import Text.Parsec hiding (State)
 import Text.Parsec.Language (emptyDef)
 import Text.Parsec.String
@@ -18,11 +18,11 @@ reservedOp = P.reservedOp lexer
 natural = fromInteger <$> P.natural lexer
 
 data Expr
-  = LShift Expr !Word16
-  | RShift Expr !Word16
-  | And Expr Expr
-  | Or Expr Expr
-  | Not Expr
+  = LShift !Expr !Word16
+  | RShift !Expr !Word16
+  | And !Expr !Expr
+  | Or !Expr !Expr
+  | Not !Expr
   | Value !Word16
   | Name !String
   deriving (Show, Eq)
@@ -53,7 +53,7 @@ eval (Name n) = do
   s <- get
   let e = M.findWithDefault (error $ "missing: " ++ n) n s
   v <- eval e
-  put $ M.insert n (Value v) s
+  modify' $ M.insert n (Value v)
   return v
 eval (Not e) = complement <$> eval e
 eval (Or a b) = liftM2 (.|.) (eval a) (eval b)
@@ -62,5 +62,11 @@ eval (LShift e i) = flip shiftL (fromIntegral i) <$> eval e
 eval (RShift e i) = flip shiftR (fromIntegral i) <$> eval e
 
 main :: IO ()
--- main = getContents >>= putStrLn . either show (show . flip eval (Name "a")) . parse store "<stdin>"
-main = getContents >>= putStrLn . either show (show . evalState (eval $ Name "gg")) . parse store "<stdin>"
+main = do
+  input <- getContents
+  let st = either (error . show) id $ parse store "<stdin>" input
+  let a = evalState (eval $ Name "a") st
+  print a
+  let st' = M.insert "b" (Value a) st
+  let a' = evalState (eval $ Name "a") st'
+  print a'
