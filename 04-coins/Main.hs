@@ -1,3 +1,4 @@
+import Control.Monad (forM_)
 import qualified Crypto.Hash.MD5 as MD5
 import qualified Data.ByteString as B
 import qualified Data.ByteString.Char8 as BC
@@ -16,4 +17,6 @@ test :: String -> Int -> Int -> Bool
 test k n = startsWithZeroes n . MD5.hash . message k
 
 main :: IO ()
-main = print $ until (test "ckczppom" 6) (+1) 1
+main = do
+  let key = "ckczppom"
+  forM_ [5,6] $ \i -> print $ until (test key i) (+1) 1

@@ -26,5 +26,7 @@ numVisitedWithRobo :: Position -> [Direction] -> Int
 numVisitedWithRobo p = S.size . S.unions . map (locsVisited p) . roundRobin 2
 
 main :: IO ()
--- main = getContents >>= print . numVisited (0,0)
-main = getContents >>= print . numVisitedWithRobo (0,0)
+main = do
+  dirs <- getContents
+  print $ numVisited (0,0) dirs
+  print $ numVisitedWithRobo (0,0) dirs
