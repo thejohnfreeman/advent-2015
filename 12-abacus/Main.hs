@@ -1,3 +1,5 @@
+-- stack runghc --verbosity error --package aeson
+
 {-# LANGUAGE OverloadedStrings #-}
 
 import qualified Data.Aeson as JS

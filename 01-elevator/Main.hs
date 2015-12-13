@@ -1,3 +1,5 @@
+-- stack runghc --verbosity error
+
 import Control.Monad
 import Data.List
 

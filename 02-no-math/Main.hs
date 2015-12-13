@@ -1,3 +1,5 @@
+-- stack runghc --verbosity error --package split
+
 import Data.List
 import Data.List.Split
 

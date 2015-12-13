@@ -1,3 +1,5 @@
+-- stack runghc --verbosity error
+
 import Data.List (isInfixOf)
 
 -- There has to be a better way...

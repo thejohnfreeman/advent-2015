@@ -1,3 +1,5 @@
+-- stack runghc --verbosity error --package parsec --package vector
+
 {-# OPTIONS_GHC -fno-warn-unused-do-bind #-}
 {-# LANGUAGE FlexibleContexts #-}
 

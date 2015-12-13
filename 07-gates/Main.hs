@@ -1,3 +1,5 @@
+-- stack runghc --verbosity error --package parsec
+
 import Control.Monad.State.Strict
 import Data.Bits
 import Data.Word

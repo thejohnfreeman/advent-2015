@@ -1,3 +1,5 @@
+-- stack runghc --verbosity error
+
 import Data.Char
 import Text.Parsec
 import Text.Parsec.String

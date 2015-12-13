@@ -1,3 +1,5 @@
+-- stack runghc --verbosity error
+
 import qualified Data.Set as S
 
 type Position = (Int, Int)

@@ -1,3 +1,5 @@
+-- stack runghc --verbosity error --package cryptohash --package bytestring --package base16-bytestring
+
 import Control.Monad (forM_)
 import qualified Crypto.Hash.MD5 as MD5
 import qualified Data.ByteString as B
