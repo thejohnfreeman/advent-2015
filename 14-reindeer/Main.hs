@@ -15,15 +15,18 @@ data Reindeer = Reindeer
   }
   deriving (Show, Eq)
 
+nat :: (Read a, Num a) => Parser a
+nat = read <$> many1 digit
+
 pReindeer :: Parser Reindeer
 pReindeer = do
   name <- many1 letter
   string " can fly "
-  speed <- read <$> many1 digit
+  speed <- nat
   string " km/s for "
-  stamina <- read <$> many1 digit
+  stamina <- nat
   string " seconds, but then must rest for "
-  rest <- read <$> many1 digit
+  rest <- nat
   string " seconds."
   endOfLine
   return $ Reindeer name speed stamina rest
