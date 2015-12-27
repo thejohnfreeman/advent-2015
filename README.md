@@ -29,6 +29,9 @@ be some tweaks that could make it more concise, more readable, or faster.
 | 15 | :star::star: | Science for Hungry People | Optimization
 | 16 | :star::star: | Aunt Sue | Filtering
 | 17 | :star::star::star: | No Such Thing as Too Much | Power sets
+| 18 |        | Like a GIF For Your Yard | Game of Life
+| 19 |        | Medicine for Rudolph | Breadth-first search
+| 20 | :star: | Infinite Elves and Infinite Houses | Prime factorization
 
 ### Notes
 
