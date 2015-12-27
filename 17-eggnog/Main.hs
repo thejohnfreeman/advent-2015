@@ -5,15 +5,8 @@
 import qualified Data.List as L
 import Data.Ord (comparing)
 
-interleave :: [[a]] -> [a]
-interleave = L.concat . L.transpose
-
-powerset :: [a] -> [[a]]
-powerset [] = [[]]
-powerset (x:xs) = interleave [xss, map (x:) xss] where xss = powerset xs
-
 fits :: Int -> [Int] -> [[Int]]
-fits eggnog containers = filter ((==eggnog) . sum) $ powerset containers
+fits eggnog containers = filter ((==eggnog) . sum) $ L.subsequences containers
 
 main :: IO ()
 main = do

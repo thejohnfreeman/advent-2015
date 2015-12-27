@@ -3,9 +3,6 @@
 import Control.Monad (forM_)
 import qualified Data.List as L
 
-interleave :: [[a]] -> [a]
-interleave = L.concat . L.transpose
-
 divides :: Integral a => a -> a -> Bool
 divides k n = (n `mod` k) == 0
 
@@ -25,11 +22,7 @@ factors 1 = [1]
 factors n = let k = lpf n in k : factors (n `div` k)
 
 divisors :: Integral a => a -> [a]
-divisors = L.nub . map product . powerset . factors
-
-powerset :: [a] -> [[a]]
-powerset [] = [[]]
-powerset (x:xs) = interleave [xss, map (x:) xss] where xss = powerset xs
+divisors = L.nub . map product . L.subsequences . factors
 
 numPresents :: Integral a => a -> a
 numPresents = (10*) . sum . divisors
@@ -41,4 +34,4 @@ main :: IO ()
 main = do
   -- forM_ [1..9] $ print . numPresents
   print $ head $ dropWhile ((<36000000) . numPresents) [800000..]
-  print $ head $ dropWhile ((<36000000) . numPresents') [700000..]
+  print $ head $ dropWhile ((<36000000) . numPresents') [800000..]

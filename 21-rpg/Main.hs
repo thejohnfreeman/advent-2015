@@ -3,13 +3,6 @@
 import qualified Data.List as L
 import Data.Ord (comparing)
 
-interleave :: [[a]] -> [a]
-interleave = L.concat . L.transpose
-
-powerset :: [a] -> [[a]]
-powerset [] = [[]]
-powerset (x:xs) = interleave [xss, map (x:) xss] where xss = powerset xs
-
 data Gear = Gear
   { _pieces :: [String]
   , _cost :: Int
@@ -50,7 +43,7 @@ gearCombos :: [Gear]
 gearCombos = do
   w <- weapons
   a <- armors
-  rs <- filter ((<=2) . length) $ powerset rings
+  rs <- filter ((<=2) . length) $ L.subsequences rings
   map (L.foldl1' addGear) [w:rs, w:a:rs]
 
 data CharacterType = Player | Boss
