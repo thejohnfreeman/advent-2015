@@ -32,7 +32,7 @@ be some tweaks that could make it more concise, more readable, or faster.
 | 18 |        | [Like a GIF For Your Yard](http://adventofcode.com/day/18) | Game of Life
 | 19 |        | [Medicine for Rudolph](http://adventofcode.com/day/19) | Single pattern substring search, sets
 | 20 | :star: | [Infinite Elves and Infinite Houses](http://adventofcode.com/day/20) | Prime factorization
-| 21 | :star::star: | [Infinite Elves and Infinite Houses](http://adventofcode.com/day/21) | Simulation
+| 21 | :star::star: | [RPG Simulator 20XX](http://adventofcode.com/day/21) | Simulation
 
 ### Notes
 
