@@ -30,7 +30,7 @@ be some tweaks that could make it more concise, more readable, or faster.
 | 16 | :star::star: | [Aunt Sue](http://adventofcode.com/day/16) | Filtering
 | 17 | :star::star::star: | [No Such Thing as Too Much](http://adventofcode.com/day/17) | Power sets
 | 18 |        | [Like a GIF For Your Yard](http://adventofcode.com/day/18) | Game of Life
-| 19 |        | [Medicine for Rudolph](http://adventofcode.com/day/19) | Single pattern substring search, sets
+| 19 |        | [Medicine for Rudolph](http://adventofcode.com/day/19) | Single pattern substring search, breadth-first search
 | 20 | :star: | [Infinite Elves and Infinite Houses](http://adventofcode.com/day/20) | Prime factorization
 | 21 | :star::star: | [RPG Simulator 20XX](http://adventofcode.com/day/21) | Simulation
 
