@@ -24,12 +24,16 @@ be some tweaks that could make it more concise, more readable, or faster.
 | 12 | :star::star: | [JSAbacusFramework.io](http://adventofcode.com/day/12) | JSON
 | 13 |        | [Knights of the Dinner Table](http://adventofcode.com/day/13) | Shortest Hamiltonian path
 | 14 | :star: | [Reindeer Olympics](http://adventofcode.com/day/14) | Simulation
-| 15 | :star::star: | [Science for Hungry People](http://adventofcode.com/day/15) | Linear programming
-| 16 | :star::star: | [Aunt Sue](http://adventofcode.com/day/16) | Filtering
+| 15 | :star::star: | [Science for Hungry People](http://adventofcode.com/day/15) | Integer linear programming
+| 16 | :star::star: | [Aunt Sue](http://adventofcode.com/day/16) | SQL
 | 17 | :star::star::star: | [No Such Thing as Too Much](http://adventofcode.com/day/17) | Power sets
 | 18 |        | [Like a GIF For Your Yard](http://adventofcode.com/day/18) | Game of Life
 | 19 |        | [Medicine for Rudolph](http://adventofcode.com/day/19) | Single pattern substring search, breadth-first search
 | 20 | :star: | [Infinite Elves and Infinite Houses](http://adventofcode.com/day/20) | Prime factorization
 | 21 | :star::star: | [RPG Simulator 20XX](http://adventofcode.com/day/21) | Simulation
+| 22 |        | [Wizard Simulator 20XX](http://adventofcode.com/day/22) | Simulation
+| 23 |        | [Opening the Turing Lock](http://adventofcode.com/day/23) | Interpreting assembly
+| 24 | :star::star: | [It Hangs in the Balance](http://adventofcode.com/day/24) | Integer linear programming
+| 25 |        | [Let It Snow](http://adventofcode.com/day/25) | Dynamic programming
 
 <sup id="foot1">1</sup> Can be solved with regular expressions using back references. [↩](#ref1)
