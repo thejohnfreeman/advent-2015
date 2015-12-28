@@ -1,24 +1,15 @@
--- stack runghc --verbosity error --package cryptohash --package bytestring --package base16-bytestring
+-- stack runghc --verbosity error --package cryptohash --package bytestring
 
 import Control.Monad (forM_)
-import qualified Crypto.Hash.MD5 as MD5
-import qualified Data.ByteString as B
+import Crypto.Hash (Digest, MD5, hash)
 import qualified Data.ByteString.Char8 as BC
-import qualified Data.ByteString.Base16 as B16
+import Data.List (isPrefixOf)
 
-type Message = B.ByteString
-type Digest = B.ByteString
-
-startsWithZeroes :: Int -> Digest -> Bool
-startsWithZeroes n = B.isPrefixOf (BC.pack $ replicate n '0') . B16.encode
-
-message :: String -> Int -> Message
-message key n = BC.pack $ key ++ show n
+md5 :: String -> Digest MD5
+md5 = hash . BC.pack
 
 test :: String -> Int -> Int -> Bool
-test k n = startsWithZeroes n . MD5.hash . message k
+test key n = isPrefixOf (replicate n '0') . show . md5 . (key++) . show
 
 main :: IO ()
-main = do
-  let key = "ckczppom"
-  forM_ [5,6] $ \i -> print $ until (test key i) (+1) 1
+main = forM_ [5,6] $ \n -> print $ until (test "ckczppom" n) (+1) 1
