@@ -1,27 +1,27 @@
 -- stack runghc --verbosity error --package split
 
-import Data.List
-import Data.List.Split
+import qualified Data.List as L
+import Data.List.Split (splitOn)
 
-data Box = Box [Int]
+-- three dimensions, sorted from lowest to highest
+type Box = [Int]
 
 parse :: String -> [Box]
 parse = map pBox . lines
-  where pBox = Box . map read . splitOn "x"
+  where pBox = L.sort . map read . splitOn "x"
 
 paper1 :: Box -> Int
-paper1 (Box dims) = surfaceArea dims + product (take 2 $ sort dims)
-  where surfaceArea [l,w,h] = 2*(l*w + w*h + l*h)
+paper1 [x,y,z] = 2*(x*y + y*z + x*z) + x*y
 
 ribbon1 :: Box -> Int
-ribbon1 (Box dims) = 2 * sum (take 2 $ sort dims) + product dims
+ribbon1 [x,y,z] = 2*(x+y) + x*y*z
 
 main :: IO ()
 main = do
- boxes <- parse <$> getContents
- print $ sum . map paper1 $ boxes
- print $ sum . map ribbon1 $ boxes
--- main = print $ paper1 $ Box [1,1,10]
--- main = print $ paper1 $ Box [2,3,4]
--- main = print $ ribbon1 $ Box [1,1,10]
--- main = print $ ribbon1 $ Box [2,3,4]
+  boxes <- parse <$> getContents
+  print $ sum . map paper1 $ boxes
+  print $ sum . map ribbon1 $ boxes
+  -- print $ paper1 [1,1,10]
+  -- print $ paper1 [2,3,4]
+  -- print $ ribbon1 [1,1,10]
+  -- print $ ribbon1 [2,3,4]
