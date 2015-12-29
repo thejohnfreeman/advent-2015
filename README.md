@@ -14,7 +14,7 @@ be some tweaks that could make it more concise, more readable, or faster.
 | 02 | :star::star::star: | [I Was Told There Would Be No Math](http://adventofcode.com/day/2) | Map-reduce
 | 03 | :star::star::star: | [Perfectly Spherical Houses in a Vacuum](http://adventofcode.com/day/3) | Count points visited by path
 | 04 | :star::star::star: | [The Ideal Stocking Stuffer](http://adventofcode.com/day/4) | Hashing
-| 05 | :star: | [Doesn't He Have Intern-Elves For This?](http://adventofcode.com/day/5) | Regular expressions<sup id="ref1">[1](#foot1)</sup>
+| 05 | :star::star::star: | [Doesn't He Have Intern-Elves For This?](http://adventofcode.com/day/5) | Regular expressions<sup id="ref1">[1](#foot1)</sup>
 | 06 | :star: | [Probably a Fire Hazard](http://adventofcode.com/day/6) | Rectangular regions in a 2D grid
 | 07 | :star::star: | [Some Assembly Required](http://adventofcode.com/day/7) | Calculator
 | 08 | :star::star: | [Matchsticks](http://adventofcode.com/day/8) | String encoding/decoding
